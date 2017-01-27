@@ -1,0 +1,32 @@
+id,full_name,colloquial_name,location,city,state,country
+ATL,Atlanta Hawks,hawks,Atlanta,Atlanta,Georgia,USA
+BOS,Boston Celtics,celtics,Boston,Boston,Massachusetts,USA
+CHA,Charlotte Hornets,hornets,Charlotte,Charlotte,North Carolina,USA
+CHI,Chicago Bulls,bulls,Chicago,Chicago,Illinois,USA
+CLE,Cleveland Cavaliers,cavs,Cleveland,Cleveland,Ohio,USA
+DAL,Dallas Mavericks,mavs,Dallas,Dallas,Texas,USA
+DEN,Denver Nuggets,nuggets,Denver,Denver,Colorado,USA
+DET,Detroit Pistons,pistons,Detroit,Detroit,Michigan,USA
+GSW,Golden State Warriors,warriors,Golden State,Oakland,California,USA
+HOU,Houston Rockets,rockets,Houston,Houston,Texas,USA
+IND,Indiana Pacers,pacers,Indiana,Indianapolis,Indiana,USA
+LAC,L.A. Clippers,clippers,L.A.,Los Angeles,California,USA
+LAL,L.A. Lakers,lakers,L.A.,Los Angeles,California,USA
+MEM,Memphis Grizzlies,grizzlies,Memphis,Memphis,Tennessee,USA
+MIA,Miami Heat,heat,Miami,Miami,Florida,USA
+MIL,Milwaukee Bucks,bucks,Milwaukee,Milwaukee,Wisconsin,USA
+MIN,Minnesota Timberwolves,twolves,Minnesota,Minneapolis,Minnesota,USA
+NJN,Brooklyn Nets,nets,Brooklyn,Brooklyn,New York,USA
+NOH,New Orleans Pelicans,pelicans,New Orleans,New Orleans,Louisiana,USA
+NYK,New York Knickerbockers,knicks,New York,New York City,New York,USA
+OKC,Oklahoma City Thunder,thunder,Oklahoma City,Oklahoma City,Oklahoma,USA
+ORL,Orlando Magic,magic,Orlando,Orlando,Florida,USA
+PHI,Philadelphia 76ers,76ers,Philadelphia,Philadelphia,Pennsylvania,USA
+PHO,Phoenix Suns,suns,Phoenix,Phoenix,Arizona,USA
+POR,Portland Trailblazers,blazers,Portland,Portland,Oregon,USA
+SAC,Sacramento Kings,kings,Sacramento,Sacramento,California,USA
+SAS,San Antonio Spurs,spurs,San Antonio,San Antonio,Texas,USA
+TOR,Toronto Raptors,raptors,Toronto,Toronto,Ontario,Canada
+UTA,Utah Jazz,jazz,Utah,Salt Lake City,Utah,USA
+WAS,Washington Wizards,wizards,Washington,Washington,D.C.,USA
+other,Other,none,,,,
