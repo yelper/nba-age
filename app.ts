@@ -25,11 +25,10 @@ let width = 300;
 let height = 400;
 let margins = {top: 60, right: 20, bottom: 30, left: 150};
 
-d3.json("players.json", function(error, data: Array<team>) {
-  
+d3.json("players.json", function(error, teamData: Array<team>) {
   let bdayParser = d3.timeParse("%B %-e %Y");
 
-  data.forEach(function(team) {
+  teamData.forEach(function(team) {
     team.players.forEach(function(player) {
       let bday = bdayParser(player.birthdate);
       let now = new Date();
@@ -43,14 +42,14 @@ d3.json("players.json", function(error, data: Array<team>) {
   });
 
   // order data by youngest
-  data = data.sort((a, b) => {
+  teamData = teamData.sort((a, b) => {
     var a_count = d3.sum(a.players.map(d => d.age));
     var b_count = d3.sum(b.players.map(d => d.age));
     return a_count - b_count;
   });
 
   let age_range = d3.extent(
-    data.reduce(function(p, team) { 
+    teamData.reduce(function(p, team) { 
       return p.concat(team.players.map(function(player) {
         return player.age; 
       }));
@@ -69,7 +68,7 @@ d3.json("players.json", function(error, data: Array<team>) {
     .range([0, width]);
 
   var y = d3.scaleBand()
-    .domain(data.map(d => d.id))
+    .domain(teamData.map(d => d.id))
     .rangeRound([0, height]);
 
   var colors = d3.shuffle(d3.schemeCategory20);
@@ -91,8 +90,25 @@ d3.json("players.json", function(error, data: Array<team>) {
     .selectAll('.tick text')
       .call(wrap, margins.left - 10);
 
-  var bars = svg.append('g')
-    .attr('class', 'bars');
+  var chart = svg.append('g')
+    .attr('class', 'teams');
+    // .selectAll('g.team').data(data, d => (<team>d).id ? (<team>d).id : d);
+  var teams = chart.selectAll('g.team')
+    .data(teamData)
+    .enter()
+      .append('g')
+      .attr('class', 'team')
+      .attr('transform', (d, i) => 'translate(0,' + y(d.id) + ')');
+
+  teams.each((thisTeam) => {
+    var thisGroup = d3.select((<d3.Selection>this));
+
+
+
+  });
+  
+
+
   bars.selectAll('.bar').data(choices, (d: choice) => d.name)
     .enter()
     .append('rect')
