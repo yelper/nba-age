@@ -1,5 +1,9 @@
 # nba-age
-Visualizations of players' ages in the NBA.  Just done for fun to try out a beeswarm plot with D3 v4.  A [reference bl.ock of a beeswarm is here](https://bl.ocks.org/mbostock/6526445e2b44303eebf21da3b6627320).
+A data visualization of the distribution of the ages of NBA players by team.  
+
+Done for fun to try out a beeswarm plot with D3 v4. The site is live online at <https://yelper.github.io/nba-age/>.
+
+[![A screenshot of the NBA age distribution visualization](https://raw.githubusercontent.com/yelper/nba-age/master/img/summary.png)](https://yelper.github.io/nba-age/)
 
 ### Installation
 
