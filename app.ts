@@ -1,4 +1,4 @@
-interface team {
+interface Team {
   id: string,
   city: string,
   colloquial_name: string,
@@ -6,10 +6,11 @@ interface team {
   full_name: string,
   location: string,
   state: string,
-  players: player[]
+  color: string,
+  players: Player[]
 }
 
-interface player {
+interface Player {
   number: number,
   Player: string,
   Pos: string,
@@ -18,14 +19,16 @@ interface player {
   birthdate: string,
   Exp: number,
   College: string,
-  age?: number
+  age?: number,
+  x?: number,
+  y?: number
 }
 
 let width = 300;
-let height = 400;
-let margins = {top: 60, right: 20, bottom: 30, left: 150};
+let height = 1000;
+let margins = {top: 30, right: 20, bottom: 50, left: 100};
 
-d3.json("players.json", function(error, teamData: Array<team>) {
+d3.json("players.json", function(error, teamData: Array<Team>) {
   let bdayParser = d3.timeParse("%B %-e %Y");
 
   teamData.forEach(function(team) {
@@ -33,18 +36,15 @@ d3.json("players.json", function(error, teamData: Array<team>) {
       let bday = bdayParser(player.birthdate);
       let now = new Date();
 
-      let age = now.getFullYear() - bday.getFullYear();
-      let m = now.getMonth() - bday.getMonth();
-      if (m < 0 || (m === 0 && now.getDate() < bday.getDate())) age--;
-
-      player.age = age;
+      let yearMS = 1000 * 60 * 60 * 24 * 365.26;
+      player.age = (now.getTime() - bday.getTime()) / yearMS;
     });
   });
 
   // order data by youngest
   teamData = teamData.sort((a, b) => {
-    var a_count = d3.sum(a.players.map(d => d.age));
-    var b_count = d3.sum(b.players.map(d => d.age));
+    var a_count = d3.sum(a.players.map(d => d.age)) / a.players.length;
+    var b_count = d3.sum(b.players.map(d => d.age)) / b.players.length;
     return a_count - b_count;
   });
 
@@ -56,6 +56,10 @@ d3.json("players.json", function(error, teamData: Array<team>) {
     }, [])
   );
 
+  // add a margin
+  age_range[0] -= d3.sum(age_range) * 0.02
+  age_range[1] += d3.sum(age_range) * 0.02
+
   let svg = d3.select("#svgcontainer")
     .append('svg')
       .attr('width', width + margins.left + margins.right)
@@ -63,70 +67,93 @@ d3.json("players.json", function(error, teamData: Array<team>) {
       .append('g')
         .attr('transform', 'translate(' + margins.left + ',' + margins.top + ')');
 
-  var x = d3.scaleLinear()
+  let x = d3.scaleLinear()
     .domain(age_range)
     .range([0, width]);
 
-  var y = d3.scaleBand()
+  let y = d3.scaleBand()
     .domain(teamData.map(d => d.id))
     .rangeRound([0, height]);
 
-  var colors = d3.shuffle(d3.schemeCategory20);
+  let amenities = svg.append('g').attr('class', 'amenities');
 
-  // svg.append('text')
-  //   .attr('text-anchor', 'middle')
-  //   .attr('x', width / 2)
-  //   .attr('dy', '-1em')
-  //   .text(thisCategory.name);
-  
-  svg.append('g')
+  amenities.append('g')
+    .attr('class', 'xaxis axis')
+    .call(d3.axisTop(x));  
+  amenities.append('g')
     .attr('class', 'xaxis axis')
     .attr('transform', 'translate(0,' + height + ')')
     .call(d3.axisBottom(x));
 
-  svg.append('g')
+  amenities.append('g')
     .attr('class', 'yaxis axis')
     .call(d3.axisLeft(y))
     .selectAll('.tick text')
       .call(wrap, margins.left - 10);
 
-  var chart = svg.append('g')
+  amenities.append('g')
+    .attr('class', 'grid')
+    .attr('transform', 'translate(0,' + height + ')')
+    .call(d3.axisBottom(x).tickSize(-height))
+    .selectAll('text').remove(); // there's gotta be a better way to get rid of these extra labels...
+
+  let chart = svg.append('g')
     .attr('class', 'teams');
-    // .selectAll('g.team').data(data, d => (<team>d).id ? (<team>d).id : d);
-  var teams = chart.selectAll('g.team')
+  let teams = chart.selectAll('g.team')
     .data(teamData)
     .enter()
       .append('g')
       .attr('class', 'team')
       .attr('transform', (d, i) => 'translate(0,' + y(d.id) + ')');
 
-  teams.each((thisTeam) => {
-    var thisGroup = d3.select((<d3.Selection>this));
+  teams.each(function(thisTeam) {
+    let thisGroup = d3.select(this);
+    
+    thisGroup.append('rect')
+        .attr('class', 'background')
+        .attr('y', 1)
+        .attr('width', width)
+        .attr('height', y.bandwidth() - 2)
+        .style('fill', d => thisTeam.color)
+        .style('fill-opacity', 0.5);
+    thisGroup.append('image')
+      .attr('xlink:href', d => "img/" + thisTeam.id + ".png")
+      .attr('x', -70)
+      .attr('y', 5)
+      .attr('height', '22px')
+      .attr('width', '33px');
 
+    let thisSim = d3.forceSimulation(thisTeam.players)
+      .force('x', d3.forceX((d: Player) => x(d.age)).strength(1))
+      .force('y', d3.forceY(y.bandwidth() / 2))
+      .force('collide', d3.forceCollide(4))
+      .stop();
 
+    for (let i = 0; i < 120; ++i) thisSim.tick();
 
+    let players = thisGroup.selectAll('g.players').data([0])
+      .enter().append('g')
+        .attr('class', 'players');
+        
+    let playerCell = players.selectAll('g')
+      .data(d3.voronoi<Player>()
+        .extent([[0, 0], [width, y.bandwidth()]])
+        .x(d => d.x)
+        .y(d => d.y)
+        .polygons(thisTeam.players).filter(d => true)).enter()
+          .append('g')
+          .attr('class', 'player');
+
+    playerCell.append('circle')
+        .attr('r', 3)
+        .attr('cx', d => d.data.x)
+        .attr('cy', d => d.data.y);
+    playerCell.append('path')
+      .attr('d', d => "M" + d.join("L") + "Z");
+    playerCell.append('title')
+      .text(d => d.data.Player + " (" + (Math.round(d.data.age * 10) / 10) + ")");
+      
   });
-  
-
-
-  bars.selectAll('.bar').data(choices, (d: choice) => d.name)
-    .enter()
-    .append('rect')
-      .attr('y', d => y(d.name))
-      .attr('height', y.bandwidth())
-      .attr('width', d => x(d.votes))
-      .style('fill', (d,i) => colors[i % colors.length])
-      .style('stroke-width', 1)
-      .style('stroke', '#333');
-  bars.selectAll('text').data(choices, (d: choice) => d.name)
-    .enter()
-    .append('text')
-      .attr('x', d => Math.max(x(d.votes), 0) + 5)
-      .attr('dy', '0.33em')
-      .attr('y', d => y(d.name) + y.bandwidth() / 2)
-      .style('font-size', 12)
-      .style('font-weight', 800)
-      .text(d => d.votes);
 });
 
 

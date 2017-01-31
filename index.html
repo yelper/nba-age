@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>NBA Player Age Distribution</title>
+    <style>
+        .players path {
+            fill: none;
+            pointer-events: all;
+        }
+
+        .players :hover circle {
+            fill: red;
+        }
+
+        .grid line {
+            stroke: #ccc;
+            stroke-opacity: 0.9;
+        }
+    </style>
+
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yelperalp">
+    <meta name="twitter:creator" content="@yelperalp">
+    <meta name="twitter:title" content="NBA Player Age Distribution">
+    <meta name="twitter:description" content="Visualizing the distribution of player ages across teams in the NBA!">
+    <meta name="twitter:image" content="http://yelper.github.com/nba-age/img/summary.png">
+
+    <!-- facebook card -->
+    <meta property="og:url" content="http://yelper.github.com/nba-age/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="NBA Player Age Distribution" />
+    <meta property="og:description" content="Visualizing the distribution of player ages across teams in the NBA!" />
+    <meta property="og:image" content="http://yelper.github.com/nba-age/img/summary.png" />
+</head>
+<body>
+    <h1>Age Distribution of NBA players</h1>
+    <p>Current as of 1/30/2017. Younger teams (average player age) are closer to the top.</p>
+    <div id="svgcontainer"></div>
+    <footer>
+        <p>
+            &copy; 2017 by <a href="http://twitter.com/yelperalp" target="_blank">Alper Sarikaya</a>.  <a href="https://github.com/yelper/nba-age/blob/master/LICENSE" target="_blank">MIT License</a> (you must cite this work).
+        </p>
+        <p>
+            Data from <a href="http://www.basketball-reference.com/" target="_blank">basketball-reference.com</a> and team icons from <a href="https://reddit.com/r/nba/" target="_blank">/r/nba</a>. See the <a href="https://github.com/yelper/nba-age" target="_blank">code on GitHub</a>.
+        </p>
+    </footer>
+    <script src="//d3js.org/d3.v4.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

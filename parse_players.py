@@ -38,5 +38,7 @@ if __name__ == "__main__":
             if team['id'] != "other":
                 team['players'] = stats[team['id']]
 
+    r[:] = [x for x in r if x['id'] != 'other']
+
     f = open('players.json', 'w')
     json.dump(r, f)
