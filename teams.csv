@@ -1,8 +1,9 @@
 id,full_name,colloquial_name,location,city,state,country,color
 ATL,Atlanta Hawks,hawks,Atlanta,Atlanta,Georgia,USA,#1F315C
 BOS,Boston Celtics,celtics,Boston,Boston,Massachusetts,USA,#008446
-CHA,Charlotte Hornets,hornets,Charlotte,Charlotte,North Carolina,USA,#1C0C65
+BRK,Brooklyn Nets,nets,Brooklyn,Brooklyn,New York,USA,#000000
 CHI,Chicago Bulls,bulls,Chicago,Chicago,Illinois,USA,#BC0637
+CHO,Charlotte Hornets,hornets,Charlotte,Charlotte,North Carolina,USA,#1C0C65
 CLE,Cleveland Cavaliers,cavs,Cleveland,Cleveland,Ohio,USA,#931631
 DAL,Dallas Mavericks,mavs,Dallas,Dallas,Texas,USA,#1061AC
 DEN,Denver Nuggets,nuggets,Denver,Denver,Colorado,USA,#4B90CD
@@ -16,8 +17,7 @@ MEM,Memphis Grizzlies,grizzlies,Memphis,Memphis,Tennessee,USA,#6189B9
 MIA,Miami Heat,heat,Miami,Miami,Florida,USA,#BF2F38
 MIL,Milwaukee Bucks,bucks,Milwaukee,Milwaukee,Wisconsin,USA,#104622
 MIN,Minnesota Timberwolves,twolves,Minnesota,Minneapolis,Minnesota,USA,#005183
-NJN,Brooklyn Nets,nets,Brooklyn,Brooklyn,New York,USA,#000000
-NOH,New Orleans Pelicans,pelicans,New Orleans,New Orleans,Louisiana,USA,#01295D
+NOP,New Orleans Pelicans,pelicans,New Orleans,New Orleans,Louisiana,USA,#01295D
 NYK,New York Knickerbockers,knicks,New York,New York City,New York,USA,#F36F21
 OKC,Oklahoma City Thunder,thunder,Oklahoma City,Oklahoma City,Oklahoma,USA,#0A7EC2
 ORL,Orlando Magic,magic,Orlando,Orlando,Florida,USA,#0474BC

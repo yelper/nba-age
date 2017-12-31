@@ -1,16 +1,16 @@
 No.,Player,Pos,Ht,Wt,Birth Date,,Exp,College
-30,Stephen Curry\curryst01,PG,6-3,190,March 14 1988,us,7,Davidson College
-11,Klay Thompson\thompkl01,SG,6-7,215,February 8 1990,us,5,Washington State University
-9,Andre Iguodala\iguodan01,SF,6-6,215,January 28 1984,us,12,University of Arizona
-34,Shaun Livingston\livinsh01,PG,6-7,192,September 11 1985,us,11,
-5,Kevon Looney\looneke01,PF,6-9,220,February 6 1996,us,1,University of California Los Angeles
-23,Draymond Green\greendr01,PF,6-7,230,March 4 1990,us,4,Michigan State University
-35,Kevin Durant\duranke01,SF,6-9,240,September 29 1988,us,9,University of Texas at Austin
-3,David West\westda01,PF,6-9,250,August 29 1980,us,13,Xavier University
-0,Patrick McCaw\mccawpa01,SG,6-7,185,October 25 1995,us,R,University of Nevada Las Vegas
-27,Zaza Pachulia\pachuza01,C,6-11,270,February 10 1984,ge,13,
-15,Damian Jones\jonesda03,C,7-0,245,June 30 1995,us,R,Vanderbilt University
-18,Anderson Varejao\varejan01,C,6-10,273,September 28 1982,br,12,
-20,James Michael McAdoo\mcadoja01,PF,6-9,230,January 4 1993,us,2,University of North Carolina
-21,Ian Clark\clarkia01,SG,6-3,175,March 7 1991,us,3,Belmont University
-1,JaVale McGee\mcgeeja01,C,7-0,270,January 19 1988,us,8,University of Nevada Reno
+11,Klay Thompson,SG,6-7,215,February 8 1990,us,6,Washington State University
+5,Kevon Looney,C,6-9,220,February 6 1996,us,2,University of California Los Angeles
+23,Draymond Green,PF,6-7,230,March 4 1990,us,5,Michigan State University
+0,Patrick McCaw,SG,6-7,185,October 25 1995,us,1,University of Nevada Las Vegas
+15,Damian Jones,C,7-0,245,June 30 1995,us,1,Vanderbilt University
+2,Jordan Bell,C,6-9,224,January 7 1995,us,R,University of Oregon
+30,Stephen Curry,PG,6-3,190,March 14 1988,us,8,Davidson College
+35,Kevin Durant,PF,6-9,240,September 29 1988,us,10,University of Texas at Austin
+9,Andre Iguodala,SF,6-6,215,January 28 1984,us,13,University of Arizona
+34,Shaun Livingston,PG,6-7,192,September 11 1985,us,12,
+6,Nick Young,SG,6-7,210,June 1 1985,us,10,University of Southern California
+27,Zaza Pachulia,C,6-11,270,February 10 1984,ge,14,
+18,Omri Casspi,SF,6-9,225,June 22 1988,il,8,
+3,David West,C,6-9,250,August 29 1980,us,14,Xavier University
+1,JaVale McGee,C,7-0,270,January 19 1988,us,9,University of Nevada Reno

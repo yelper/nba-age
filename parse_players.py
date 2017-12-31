@@ -10,9 +10,9 @@ def parseFile(file):
         r = [{k: v for k,v in row.items()} for row in csv.DictReader(f)]
 
         for row in r:
-            playerName, playerID = row['Player'].split('\\')
-            row['bbref_id'] = playerID
-            row['Player'] = playerName
+            # playerName, playerID = row['Player'].split('\\')
+            # row['bbref_id'] = playerID
+            # row['Player'] = playerName
 
             row["origin_country"] = row[""]
             del row[""]

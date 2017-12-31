@@ -1,16 +1,15 @@
 No.,Player,Pos,Ht,Wt,Birth Date,,Exp,College
-92,Lucas Nogueira\noguelu01,C,7-0,241,July 26 1992,br,2,
-54,Patrick Patterson\pattepa01,PF,6-9,230,March 14 1989,us,6,University of Kentucky
-7,Kyle Lowry\lowryky01,PG,6-1,196,March 25 1986,us,10,Villanova University
-17,Jonas Valanciunas\valanjo01,C,7-0,265,May 6 1992,lt,4,
-31,Terrence Ross\rosste01,SF,6-7,206,February 5 1991,us,4,University of Washington
-20,Bruno Caboclo\cabocbr01,SF,6-9,218,September 21 1995,br,2,
-55,Delon Wright\wrighde01,PG,6-5,183,April 26 1992,us,1,University of Utah
-5,DeMarre Carroll\carrode01,SF,6-8,215,July 27 1986,us,7,University of Missouri
-6,Cory Joseph\josepco01,SG,6-3,193,August 20 1991,ca,5,University of Texas at Austin
-24,Norman Powell\powelno01,SG,6-4,215,May 25 1993,us,1,University of California Los Angeles
-10,DeMar DeRozan\derozde01,SG,6-7,221,August 7 1989,us,7,University of Southern California
-0,Jared Sullinger\sullija01,PF,6-9,260,March 4 1992,us,4,Ohio State University
-42,Jakob Poeltl\poeltja01,C,7-0,248,October 15 1995,at,R,University of Utah
-43,Pascal Siakam\siakapa01,PF,6-9,230,February 4 1994,cm,R,New Mexico State University
-23,Fred VanVleet\vanvlfr01,PG,6-0,195,February 25 1994,us,R,Wichita State University
+92,Lucas Nogueira,C,7-0,241,July 26 1992,br,3,
+17,Jonas Valanciunas,C,7-0,265,May 6 1992,lt,5,
+5,Bruno Caboclo,SF,6-9,218,September 21 1995,br,3,
+55,Delon Wright,PG,6-5,183,April 26 1992,us,2,University of Utah
+24,Norman Powell,SG,6-4,215,May 25 1993,us,2,University of California Los Angeles
+10,DeMar DeRozan,SG,6-7,221,August 7 1989,us,8,University of Southern California
+42,Jakob Poeltl,C,7-0,248,October 15 1995,at,1,University of Utah
+43,Pascal Siakam,PF,6-9,230,February 4 1994,cm,1,New Mexico State University
+23,Fred VanVleet,PG,6-0,195,February 25 1994,us,1,Wichita State University
+3,OG Anunoby,SF,6-8,232,July 17 1997,gb,R,Indiana University
+34,Alfonzo McKinnie,SF,6-8,215,September 17 1992,us,R,University of Wisconsin-Green Bay
+0,C.J. Miles,SF,6-6,225,April 18 1987,us,12,
+7,Kyle Lowry,PG,6-0,205,March 25 1986,us,11,Villanova University
+9,Serge Ibaka,PF,6-10,235,September 18 1989,cg,8,
